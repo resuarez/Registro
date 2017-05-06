@@ -20,6 +20,7 @@ namespace RegistroPerforacion.Entities
         public int? N3 { get; set; }
         public int? P3 { get; set; }
         public bool R3 { get; set; }
+        // ReSharper disable once InconsistentNaming
         public double? RQD { get; set; }
     }
 }

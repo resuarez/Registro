@@ -9,22 +9,23 @@ namespace RegistroPerforacion
 {
     public partial class AchuradoForm : Form
     {
-        public Bitmap AchuradoSelected { get; set; }
-        public Bitmap AchuradoInitial { get; set; }
-
         public Dictionary<string, string> Colores;
 
         public AchuradoForm()
         {
             InitializeComponent();
-            openAchurados.InitialDirectory = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "Achurados");
+            openAchurados.InitialDirectory = Path.Combine(Form1.AppPath, "Achurados");
         }
+
+        public Bitmap AchuradoSelected { get; set; }
+        public Bitmap AchuradoInitial { get; set; }
 
         private void AchuradoForm_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = AchuradoInitial ?? new Bitmap(38, 38);
             pictureBox1.Height = pictureBox1.Image.Height;
-            string[] nombres = Colores.Keys.ToArray();
+            var nombres = Colores.Keys.ToArray();
+            // ReSharper disable once CoVariantArrayConversion
             comboBox1.Items.AddRange(nombres);
             comboBox1.Text = nombres[0];
         }
@@ -32,21 +33,19 @@ namespace RegistroPerforacion
         private void BtnOk_Click(object sender, EventArgs e)
         {
             AchuradoSelected = (Bitmap)pictureBox1.Image;
-            this.DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.OK;
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            DialogResult = DialogResult.Cancel;
         }
 
         private void BtnColor_Click(object sender, EventArgs e)
         {
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                comboBox1.Text = "Personalizado";
-                PaintAchurado();
-            }
+            if (colorDialog1.ShowDialog() != DialogResult.OK) return;
+            comboBox1.Text = @"Personalizado";
+            PaintAchurado();
         }
 
         private void PaintAchurado()
