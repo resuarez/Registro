@@ -471,7 +471,7 @@ namespace RegistroPerforacion
             }
         }
 
-        private void dataGridView2_KeyUp(object sender, KeyEventArgs e)
+        private void DataGridView2_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.F2 && e.KeyCode != Keys.Space) return;
             var cell = dataGridView2.CurrentCell;
@@ -479,6 +479,17 @@ namespace RegistroPerforacion
             {
                 DataGridView2_CellContentClick(dataGridView2, new DataGridViewCellContextMenuStripNeededEventArgs(cell.ColumnIndex, cell.RowIndex));
             }
+        }
+
+        private void PrintToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AcercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var about = new AboutBox1();
+            about.ShowDialog();
         }
     }
 }

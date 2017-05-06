@@ -94,10 +94,20 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.CajaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProfundidadArriba2Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProfundidadAbajo2Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo2Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AchuradoColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.AddGridView2 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.diaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profundidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddGridView3 = new System.Windows.Forms.Button();
             this.panelGeneral = new System.Windows.Forms.Panel();
             this.profundidad = new System.Windows.Forms.TextBox();
@@ -123,16 +133,7 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.CajaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProfundidadArriba2Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProfundidadAbajo2Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo2Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AchuradoColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.diaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profundidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ensayoBindingSource)).BeginInit();
@@ -163,7 +164,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.configurationToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
+            this.ayudaToolStripMenuItem,
+            this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
@@ -616,7 +618,64 @@
             this.dataGridView2.Size = new System.Drawing.Size(988, 259);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
-            this.dataGridView2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView2_KeyUp);
+            this.dataGridView2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DataGridView2_KeyUp);
+            // 
+            // CajaColumn
+            // 
+            this.CajaColumn.DataPropertyName = "Caja";
+            this.CajaColumn.HeaderText = "Caja";
+            this.CajaColumn.Name = "CajaColumn";
+            this.CajaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ProfundidadArriba2Column
+            // 
+            this.ProfundidadArriba2Column.DataPropertyName = "ProfundidadArriba";
+            dataGridViewCellStyle12.Format = "0.00m";
+            dataGridViewCellStyle12.NullValue = null;
+            this.ProfundidadArriba2Column.DefaultCellStyle = dataGridViewCellStyle12;
+            this.ProfundidadArriba2Column.HeaderText = "Profundidad Arriba (m)";
+            this.ProfundidadArriba2Column.Name = "ProfundidadArriba2Column";
+            this.ProfundidadArriba2Column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ProfundidadAbajo2Column
+            // 
+            this.ProfundidadAbajo2Column.DataPropertyName = "ProfundidadAbajo";
+            dataGridViewCellStyle13.Format = "0.00m";
+            dataGridViewCellStyle13.NullValue = null;
+            this.ProfundidadAbajo2Column.DefaultCellStyle = dataGridViewCellStyle13;
+            this.ProfundidadAbajo2Column.HeaderText = "Profundidad Abajo (m)";
+            this.ProfundidadAbajo2Column.Name = "ProfundidadAbajo2Column";
+            this.ProfundidadAbajo2Column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // NumeroColumn
+            // 
+            this.NumeroColumn.DataPropertyName = "Numero";
+            this.NumeroColumn.HeaderText = "Número";
+            this.NumeroColumn.Name = "NumeroColumn";
+            this.NumeroColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Tipo2Column1
+            // 
+            this.Tipo2Column1.DataPropertyName = "Tipo";
+            this.Tipo2Column1.HeaderText = "Tipo";
+            this.Tipo2Column1.Name = "Tipo2Column1";
+            this.Tipo2Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // DescripcionColumn
+            // 
+            this.DescripcionColumn.DataPropertyName = "Descripcion";
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DescripcionColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            this.DescripcionColumn.HeaderText = "Descripción";
+            this.DescripcionColumn.Name = "DescripcionColumn";
+            this.DescripcionColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // AchuradoColumn
+            // 
+            this.AchuradoColumn.DataPropertyName = "Achurado";
+            this.AchuradoColumn.HeaderText = "Achurado";
+            this.AchuradoColumn.Name = "AchuradoColumn";
+            this.AchuradoColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // AddGridView2
             // 
@@ -671,6 +730,33 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(988, 259);
             this.dataGridView3.TabIndex = 0;
+            // 
+            // diaDataGridViewTextBoxColumn
+            // 
+            this.diaDataGridViewTextBoxColumn.DataPropertyName = "Dia";
+            dataGridViewCellStyle15.Format = "d";
+            dataGridViewCellStyle15.NullValue = null;
+            this.diaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            this.diaDataGridViewTextBoxColumn.HeaderText = "Día";
+            this.diaDataGridViewTextBoxColumn.Name = "diaDataGridViewTextBoxColumn";
+            this.diaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // horaDataGridViewTextBoxColumn
+            // 
+            this.horaDataGridViewTextBoxColumn.DataPropertyName = "Hora";
+            this.horaDataGridViewTextBoxColumn.HeaderText = "Hora";
+            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
+            this.horaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // profundidadDataGridViewTextBoxColumn
+            // 
+            this.profundidadDataGridViewTextBoxColumn.DataPropertyName = "Profundidad";
+            dataGridViewCellStyle16.Format = "0.00m";
+            dataGridViewCellStyle16.NullValue = "Seco";
+            this.profundidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            this.profundidadDataGridViewTextBoxColumn.HeaderText = "Profundidad";
+            this.profundidadDataGridViewTextBoxColumn.Name = "profundidadDataGridViewTextBoxColumn";
+            this.profundidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // AddGridView3
             // 
@@ -896,6 +982,7 @@
             this.printToolStripButton.Name = "printToolStripButton";
             this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.printToolStripButton.Text = "&Print";
+            this.printToolStripButton.Click += new System.EventHandler(this.PrintToolStripButton_Click);
             // 
             // toolStripSeparator
             // 
@@ -943,89 +1030,12 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
-            // CajaColumn
+            // acercaDeToolStripMenuItem
             // 
-            this.CajaColumn.DataPropertyName = "Caja";
-            this.CajaColumn.HeaderText = "Caja";
-            this.CajaColumn.Name = "CajaColumn";
-            this.CajaColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ProfundidadArriba2Column
-            // 
-            this.ProfundidadArriba2Column.DataPropertyName = "ProfundidadArriba";
-            dataGridViewCellStyle12.Format = "0.00m";
-            dataGridViewCellStyle12.NullValue = null;
-            this.ProfundidadArriba2Column.DefaultCellStyle = dataGridViewCellStyle12;
-            this.ProfundidadArriba2Column.HeaderText = "Profundidad Arriba (m)";
-            this.ProfundidadArriba2Column.Name = "ProfundidadArriba2Column";
-            this.ProfundidadArriba2Column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ProfundidadAbajo2Column
-            // 
-            this.ProfundidadAbajo2Column.DataPropertyName = "ProfundidadAbajo";
-            dataGridViewCellStyle13.Format = "0.00m";
-            dataGridViewCellStyle13.NullValue = null;
-            this.ProfundidadAbajo2Column.DefaultCellStyle = dataGridViewCellStyle13;
-            this.ProfundidadAbajo2Column.HeaderText = "Profundidad Abajo (m)";
-            this.ProfundidadAbajo2Column.Name = "ProfundidadAbajo2Column";
-            this.ProfundidadAbajo2Column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // NumeroColumn
-            // 
-            this.NumeroColumn.DataPropertyName = "Numero";
-            this.NumeroColumn.HeaderText = "Número";
-            this.NumeroColumn.Name = "NumeroColumn";
-            this.NumeroColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Tipo2Column1
-            // 
-            this.Tipo2Column1.DataPropertyName = "Tipo";
-            this.Tipo2Column1.HeaderText = "Tipo";
-            this.Tipo2Column1.Name = "Tipo2Column1";
-            this.Tipo2Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // DescripcionColumn
-            // 
-            this.DescripcionColumn.DataPropertyName = "Descripcion";
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DescripcionColumn.DefaultCellStyle = dataGridViewCellStyle14;
-            this.DescripcionColumn.HeaderText = "Descripción";
-            this.DescripcionColumn.Name = "DescripcionColumn";
-            this.DescripcionColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // AchuradoColumn
-            // 
-            this.AchuradoColumn.DataPropertyName = "Achurado";
-            this.AchuradoColumn.HeaderText = "Achurado";
-            this.AchuradoColumn.Name = "AchuradoColumn";
-            this.AchuradoColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // diaDataGridViewTextBoxColumn
-            // 
-            this.diaDataGridViewTextBoxColumn.DataPropertyName = "Dia";
-            dataGridViewCellStyle15.Format = "d";
-            dataGridViewCellStyle15.NullValue = null;
-            this.diaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
-            this.diaDataGridViewTextBoxColumn.HeaderText = "Día";
-            this.diaDataGridViewTextBoxColumn.Name = "diaDataGridViewTextBoxColumn";
-            this.diaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // horaDataGridViewTextBoxColumn
-            // 
-            this.horaDataGridViewTextBoxColumn.DataPropertyName = "Hora";
-            this.horaDataGridViewTextBoxColumn.HeaderText = "Hora";
-            this.horaDataGridViewTextBoxColumn.Name = "horaDataGridViewTextBoxColumn";
-            this.horaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // profundidadDataGridViewTextBoxColumn
-            // 
-            this.profundidadDataGridViewTextBoxColumn.DataPropertyName = "Profundidad";
-            dataGridViewCellStyle16.Format = "0.00m";
-            dataGridViewCellStyle16.NullValue = "Seco";
-            this.profundidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
-            this.profundidadDataGridViewTextBoxColumn.HeaderText = "Profundidad";
-            this.profundidadDataGridViewTextBoxColumn.Name = "profundidadDataGridViewTextBoxColumn";
-            this.profundidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de...";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.AcercaDeToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1162,6 +1172,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn diaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn profundidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
     }
 }
 
