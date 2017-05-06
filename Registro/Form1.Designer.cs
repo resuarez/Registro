@@ -135,6 +135,7 @@
             this.P3Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.R3Column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.RQSColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.previewToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ensayoBindingSource)).BeginInit();
@@ -794,6 +795,7 @@
             this.openToolStripButton,
             this.saveToolStripButton,
             this.printToolStripButton,
+            this.previewToolStripButton,
             this.toolStripSeparator,
             this.cutToolStripButton,
             this.copyToolStripButton,
@@ -802,7 +804,7 @@
             this.helpToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(208, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(262, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1040,6 +1042,16 @@
             this.RQSColumn.Name = "RQSColumn";
             this.RQSColumn.Width = 68;
             // 
+            // previewToolStripButton
+            // 
+            this.previewToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.previewToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("previewToolStripButton.Image")));
+            this.previewToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.previewToolStripButton.Name = "previewToolStripButton";
+            this.previewToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.previewToolStripButton.Text = "PreviewToolStripButton";
+            this.previewToolStripButton.Click += new System.EventHandler(this.previewToolStripButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1176,6 +1188,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn P3Column;
         private System.Windows.Forms.DataGridViewCheckBoxColumn R3Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn RQSColumn;
+        private System.Windows.Forms.ToolStripButton previewToolStripButton;
     }
 }
 

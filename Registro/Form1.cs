@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -92,11 +93,11 @@ namespace RegistroPerforacion
                     }
                     break;
                 case "ProfundidadArribaColumn":
-                {
-                    var prof1 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadArribaColumn"];
-                    var prof2 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadAbajoColumn"];
-                    var tipo = dataGridView1.Rows[e.RowIndex].Cells["TipoColumn"].Value.ToString();
-                    prof2.Value = (double)prof1.Value + DefaultConfig.TiposdeEnsayos.First(x => x.ShortName.Equals(tipo)).Longitud;
+                    {
+                        var prof1 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadArribaColumn"];
+                        var prof2 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadAbajoColumn"];
+                        var tipo = dataGridView1.Rows[e.RowIndex].Cells["TipoColumn"].Value.ToString();
+                        prof2.Value = (double)prof1.Value + DefaultConfig.TiposdeEnsayos.First(x => x.ShortName.Equals(tipo)).Longitud;
                     }
                     break;
                 case "ProfundidadAbajoColumn":
@@ -109,13 +110,13 @@ namespace RegistroPerforacion
                     }
                     break;
                 case "LongitudRecobradaColumn":
-                {
-                    var longitudPerforada = (double)dataGridView1.Rows[e.RowIndex].Cells["LongitudPerforadaColumn"].Value;
-                    var longitudRecobrada = (double)dataGridView1.Rows[e.RowIndex].Cells["LongitudRecobradaColumn"].Value;
-                    var recuperacion = dataGridView1.Rows[e.RowIndex].Cells["RecuperacionColumn"];
-                    recuperacion.Value = longitudRecobrada / longitudPerforada;
-                    break;
-                }
+                    {
+                        var longitudPerforada = (double)dataGridView1.Rows[e.RowIndex].Cells["LongitudPerforadaColumn"].Value;
+                        var longitudRecobrada = (double)dataGridView1.Rows[e.RowIndex].Cells["LongitudRecobradaColumn"].Value;
+                        var recuperacion = dataGridView1.Rows[e.RowIndex].Cells["RecuperacionColumn"];
+                        recuperacion.Value = longitudRecobrada / longitudPerforada;
+                        break;
+                    }
 
                 case "N1Column":
                     {
@@ -497,13 +498,37 @@ namespace RegistroPerforacion
 
         private void PrintToolStripButton_Click(object sender, EventArgs e)
         {
+            var pd = new PrintDocument();
+            pd.PrintPage += PrintPage;
+            pd.Print();
+            pd.Dispose();
 
         }
-     
+
+        private static void PrintPage(object sender, PrintPageEventArgs ev)
+        {
+            // 215.9 by 279.4 mm
+            ev.Graphics.PageUnit = GraphicsUnit.Millimeter;
+            var pen1 = new Pen(Color.Black, 1);
+            var pen2 = new Pen(Color.Black, 2);
+            ev.Graphics.DrawRectangle(pen2, new Rectangle(10, 10, 195, 259));
+            ev.HasMorePages = false;
+        }
+
         private void AcercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var about = new AboutBox1();
             about.ShowDialog();
+        }
+
+        private void previewToolStripButton_Click(object sender, EventArgs e)
+        {
+            var preview = new PrintPreviewDialog();
+            var pd = new PrintDocument();
+            pd.PrintPage += PrintPage;
+            preview.Document = pd;
+            preview.ShowDialog();
+            pd.Dispose();
         }
     }
 }
