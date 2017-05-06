@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,10 +47,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +59,7 @@
             this.tipoDeEnsayosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coloresDeAchuradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.borrarFilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ensayoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,22 +76,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TipoColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ProfundidadArribaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProfundidadAbajoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LongitudPerforadaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LongitudRecobradaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RecuperacionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.N1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.R1Column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.N2Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P2Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.R2Column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.N3Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P3Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.R3Column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.RQSColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddGridView1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -133,7 +119,22 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TipoColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ProfundidadArribaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProfundidadAbajoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LongitudPerforadaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LongitudRecobradaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RecuperacionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.N1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R1Column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.N2Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P2Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R2Column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.N3Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P3Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R3Column = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.RQSColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ensayoBindingSource)).BeginInit();
@@ -254,6 +255,13 @@
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de...";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.AcercaDeToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -414,152 +422,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             // 
-            // TipoColumn
-            // 
-            this.TipoColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TipoColumn.DataPropertyName = "Tipo";
-            this.TipoColumn.HeaderText = "Tipo";
-            this.TipoColumn.Name = "TipoColumn";
-            this.TipoColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TipoColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TipoColumn.Width = 53;
-            // 
-            // ProfundidadArribaColumn
-            // 
-            this.ProfundidadArribaColumn.DataPropertyName = "ProfundidadArriba";
-            dataGridViewCellStyle1.Format = "0.00m";
-            this.ProfundidadArribaColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ProfundidadArribaColumn.HeaderText = "Profundidad Arriba (m)";
-            this.ProfundidadArribaColumn.Name = "ProfundidadArribaColumn";
-            // 
-            // ProfundidadAbajoColumn
-            // 
-            this.ProfundidadAbajoColumn.DataPropertyName = "ProfundidadAbajo";
-            dataGridViewCellStyle2.Format = "0.00m";
-            this.ProfundidadAbajoColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ProfundidadAbajoColumn.HeaderText = "Profundidad Abajo (m)";
-            this.ProfundidadAbajoColumn.Name = "ProfundidadAbajoColumn";
-            // 
-            // LongitudPerforadaColumn
-            // 
-            this.LongitudPerforadaColumn.DataPropertyName = "LongitudPerforada";
-            dataGridViewCellStyle3.Format = "0.00m";
-            this.LongitudPerforadaColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.LongitudPerforadaColumn.HeaderText = "Longitud Perforada (m)";
-            this.LongitudPerforadaColumn.Name = "LongitudPerforadaColumn";
-            // 
-            // LongitudRecobradaColumn
-            // 
-            this.LongitudRecobradaColumn.DataPropertyName = "LongitudRecobrada";
-            dataGridViewCellStyle4.Format = "0.00m";
-            this.LongitudRecobradaColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.LongitudRecobradaColumn.HeaderText = "Longitud Recobrada (m)";
-            this.LongitudRecobradaColumn.Name = "LongitudRecobradaColumn";
-            // 
-            // RecuperacionColumn
-            // 
-            this.RecuperacionColumn.DataPropertyName = "Recuperacion";
-            this.RecuperacionColumn.DividerWidth = 5;
-            this.RecuperacionColumn.HeaderText = "Recuperación";
-            this.RecuperacionColumn.Name = "RecuperacionColumn";
-            // 
-            // N1Column
-            // 
-            this.N1Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.N1Column.DataPropertyName = "N1";
-            dataGridViewCellStyle5.Format = "0 golpes";
-            this.N1Column.DefaultCellStyle = dataGridViewCellStyle5;
-            this.N1Column.HeaderText = "N1";
-            this.N1Column.Name = "N1Column";
-            this.N1Column.Width = 46;
-            // 
-            // P1Column
-            // 
-            this.P1Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P1Column.DataPropertyName = "P1";
-            dataGridViewCellStyle6.Format = "0\\\"";
-            this.P1Column.DefaultCellStyle = dataGridViewCellStyle6;
-            this.P1Column.HeaderText = "P1";
-            this.P1Column.Name = "P1Column";
-            this.P1Column.Width = 45;
-            // 
-            // R1Column
-            // 
-            this.R1Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.R1Column.DataPropertyName = "R1";
-            this.R1Column.DividerWidth = 5;
-            this.R1Column.HeaderText = "R1";
-            this.R1Column.Name = "R1Column";
-            this.R1Column.Width = 32;
-            // 
-            // N2Column
-            // 
-            this.N2Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.N2Column.DataPropertyName = "N2";
-            dataGridViewCellStyle7.Format = "0 golpes";
-            this.N2Column.DefaultCellStyle = dataGridViewCellStyle7;
-            this.N2Column.HeaderText = "N2";
-            this.N2Column.Name = "N2Column";
-            this.N2Column.Width = 46;
-            // 
-            // P2Column
-            // 
-            this.P2Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P2Column.DataPropertyName = "P2";
-            dataGridViewCellStyle8.Format = "0\"";
-            this.P2Column.DefaultCellStyle = dataGridViewCellStyle8;
-            this.P2Column.HeaderText = "P2";
-            this.P2Column.Name = "P2Column";
-            this.P2Column.Width = 45;
-            // 
-            // R2Column
-            // 
-            this.R2Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.R2Column.DataPropertyName = "R2";
-            this.R2Column.DividerWidth = 5;
-            this.R2Column.HeaderText = "R2";
-            this.R2Column.Name = "R2Column";
-            this.R2Column.Width = 32;
-            // 
-            // N3Column
-            // 
-            this.N3Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.N3Column.DataPropertyName = "N3";
-            dataGridViewCellStyle9.Format = "0 golpes";
-            this.N3Column.DefaultCellStyle = dataGridViewCellStyle9;
-            this.N3Column.HeaderText = "N3";
-            this.N3Column.Name = "N3Column";
-            this.N3Column.Width = 46;
-            // 
-            // P3Column
-            // 
-            this.P3Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P3Column.DataPropertyName = "P3";
-            dataGridViewCellStyle10.Format = "0\"";
-            this.P3Column.DefaultCellStyle = dataGridViewCellStyle10;
-            this.P3Column.HeaderText = "P3";
-            this.P3Column.Name = "P3Column";
-            this.P3Column.Width = 45;
-            // 
-            // R3Column
-            // 
-            this.R3Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.R3Column.DataPropertyName = "R3";
-            this.R3Column.DividerWidth = 5;
-            this.R3Column.HeaderText = "R3";
-            this.R3Column.Name = "R3Column";
-            this.R3Column.Width = 32;
-            // 
-            // RQSColumn
-            // 
-            this.RQSColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.RQSColumn.DataPropertyName = "RQD";
-            dataGridViewCellStyle11.Format = "0%";
-            this.RQSColumn.DefaultCellStyle = dataGridViewCellStyle11;
-            this.RQSColumn.HeaderText = "RQD (%)";
-            this.RQSColumn.Name = "RQSColumn";
-            this.RQSColumn.Width = 68;
-            // 
             // AddGridView1
             // 
             this.AddGridView1.Location = new System.Drawing.Point(3, 268);
@@ -630,9 +492,9 @@
             // ProfundidadArriba2Column
             // 
             this.ProfundidadArriba2Column.DataPropertyName = "ProfundidadArriba";
-            dataGridViewCellStyle12.Format = "0.00m";
-            dataGridViewCellStyle12.NullValue = null;
-            this.ProfundidadArriba2Column.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Format = "0.00m";
+            dataGridViewCellStyle13.NullValue = null;
+            this.ProfundidadArriba2Column.DefaultCellStyle = dataGridViewCellStyle13;
             this.ProfundidadArriba2Column.HeaderText = "Profundidad Arriba (m)";
             this.ProfundidadArriba2Column.Name = "ProfundidadArriba2Column";
             this.ProfundidadArriba2Column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -640,9 +502,9 @@
             // ProfundidadAbajo2Column
             // 
             this.ProfundidadAbajo2Column.DataPropertyName = "ProfundidadAbajo";
-            dataGridViewCellStyle13.Format = "0.00m";
-            dataGridViewCellStyle13.NullValue = null;
-            this.ProfundidadAbajo2Column.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Format = "0.00m";
+            dataGridViewCellStyle14.NullValue = null;
+            this.ProfundidadAbajo2Column.DefaultCellStyle = dataGridViewCellStyle14;
             this.ProfundidadAbajo2Column.HeaderText = "Profundidad Abajo (m)";
             this.ProfundidadAbajo2Column.Name = "ProfundidadAbajo2Column";
             this.ProfundidadAbajo2Column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -664,8 +526,8 @@
             // DescripcionColumn
             // 
             this.DescripcionColumn.DataPropertyName = "Descripcion";
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DescripcionColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DescripcionColumn.DefaultCellStyle = dataGridViewCellStyle15;
             this.DescripcionColumn.HeaderText = "Descripción";
             this.DescripcionColumn.Name = "DescripcionColumn";
             this.DescripcionColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -734,9 +596,9 @@
             // diaDataGridViewTextBoxColumn
             // 
             this.diaDataGridViewTextBoxColumn.DataPropertyName = "Dia";
-            dataGridViewCellStyle15.Format = "d";
-            dataGridViewCellStyle15.NullValue = null;
-            this.diaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.Format = "d";
+            dataGridViewCellStyle16.NullValue = null;
+            this.diaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
             this.diaDataGridViewTextBoxColumn.HeaderText = "Día";
             this.diaDataGridViewTextBoxColumn.Name = "diaDataGridViewTextBoxColumn";
             this.diaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -751,9 +613,9 @@
             // profundidadDataGridViewTextBoxColumn
             // 
             this.profundidadDataGridViewTextBoxColumn.DataPropertyName = "Profundidad";
-            dataGridViewCellStyle16.Format = "0.00m";
-            dataGridViewCellStyle16.NullValue = "Seco";
-            this.profundidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Format = "0.00m";
+            dataGridViewCellStyle17.NullValue = "Seco";
+            this.profundidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
             this.profundidadDataGridViewTextBoxColumn.HeaderText = "Profundidad";
             this.profundidadDataGridViewTextBoxColumn.Name = "profundidadDataGridViewTextBoxColumn";
             this.profundidadDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1030,12 +892,153 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
-            // acercaDeToolStripMenuItem
+            // TipoColumn
             // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de...";
-            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.AcercaDeToolStripMenuItem_Click);
+            this.TipoColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TipoColumn.DataPropertyName = "Tipo";
+            this.TipoColumn.HeaderText = "Tipo";
+            this.TipoColumn.Name = "TipoColumn";
+            this.TipoColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TipoColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.TipoColumn.Width = 53;
+            // 
+            // ProfundidadArribaColumn
+            // 
+            this.ProfundidadArribaColumn.DataPropertyName = "ProfundidadArriba";
+            dataGridViewCellStyle1.Format = "0.00m";
+            this.ProfundidadArribaColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ProfundidadArribaColumn.HeaderText = "Profundidad Arriba (m)";
+            this.ProfundidadArribaColumn.Name = "ProfundidadArribaColumn";
+            // 
+            // ProfundidadAbajoColumn
+            // 
+            this.ProfundidadAbajoColumn.DataPropertyName = "ProfundidadAbajo";
+            dataGridViewCellStyle2.Format = "0.00m";
+            this.ProfundidadAbajoColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ProfundidadAbajoColumn.HeaderText = "Profundidad Abajo (m)";
+            this.ProfundidadAbajoColumn.Name = "ProfundidadAbajoColumn";
+            // 
+            // LongitudPerforadaColumn
+            // 
+            this.LongitudPerforadaColumn.DataPropertyName = "LongitudPerforada";
+            dataGridViewCellStyle3.Format = "0.00m";
+            this.LongitudPerforadaColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.LongitudPerforadaColumn.HeaderText = "Longitud Perforada (m)";
+            this.LongitudPerforadaColumn.Name = "LongitudPerforadaColumn";
+            // 
+            // LongitudRecobradaColumn
+            // 
+            this.LongitudRecobradaColumn.DataPropertyName = "LongitudRecobrada";
+            dataGridViewCellStyle4.Format = "0.00m";
+            this.LongitudRecobradaColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.LongitudRecobradaColumn.HeaderText = "Longitud Recobrada (m)";
+            this.LongitudRecobradaColumn.Name = "LongitudRecobradaColumn";
+            // 
+            // RecuperacionColumn
+            // 
+            this.RecuperacionColumn.DataPropertyName = "Recuperacion";
+            dataGridViewCellStyle5.Format = "0.0%";
+            this.RecuperacionColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.RecuperacionColumn.DividerWidth = 5;
+            this.RecuperacionColumn.HeaderText = "Recuperación (%)";
+            this.RecuperacionColumn.Name = "RecuperacionColumn";
+            // 
+            // N1Column
+            // 
+            this.N1Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.N1Column.DataPropertyName = "N1";
+            dataGridViewCellStyle6.Format = "0 golpes";
+            this.N1Column.DefaultCellStyle = dataGridViewCellStyle6;
+            this.N1Column.HeaderText = "N1";
+            this.N1Column.Name = "N1Column";
+            this.N1Column.Width = 46;
+            // 
+            // P1Column
+            // 
+            this.P1Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P1Column.DataPropertyName = "P1";
+            dataGridViewCellStyle7.Format = "0\\\"";
+            this.P1Column.DefaultCellStyle = dataGridViewCellStyle7;
+            this.P1Column.HeaderText = "P1";
+            this.P1Column.Name = "P1Column";
+            this.P1Column.Width = 45;
+            // 
+            // R1Column
+            // 
+            this.R1Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.R1Column.DataPropertyName = "R1";
+            this.R1Column.DividerWidth = 5;
+            this.R1Column.HeaderText = "R1";
+            this.R1Column.Name = "R1Column";
+            this.R1Column.Width = 32;
+            // 
+            // N2Column
+            // 
+            this.N2Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.N2Column.DataPropertyName = "N2";
+            dataGridViewCellStyle8.Format = "0 golpes";
+            this.N2Column.DefaultCellStyle = dataGridViewCellStyle8;
+            this.N2Column.HeaderText = "N2";
+            this.N2Column.Name = "N2Column";
+            this.N2Column.Width = 46;
+            // 
+            // P2Column
+            // 
+            this.P2Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P2Column.DataPropertyName = "P2";
+            dataGridViewCellStyle9.Format = "0\"";
+            this.P2Column.DefaultCellStyle = dataGridViewCellStyle9;
+            this.P2Column.HeaderText = "P2";
+            this.P2Column.Name = "P2Column";
+            this.P2Column.Width = 45;
+            // 
+            // R2Column
+            // 
+            this.R2Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.R2Column.DataPropertyName = "R2";
+            this.R2Column.DividerWidth = 5;
+            this.R2Column.HeaderText = "R2";
+            this.R2Column.Name = "R2Column";
+            this.R2Column.Width = 32;
+            // 
+            // N3Column
+            // 
+            this.N3Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.N3Column.DataPropertyName = "N3";
+            dataGridViewCellStyle10.Format = "0 golpes";
+            this.N3Column.DefaultCellStyle = dataGridViewCellStyle10;
+            this.N3Column.HeaderText = "N3";
+            this.N3Column.Name = "N3Column";
+            this.N3Column.Width = 46;
+            // 
+            // P3Column
+            // 
+            this.P3Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P3Column.DataPropertyName = "P3";
+            dataGridViewCellStyle11.Format = "0\"";
+            this.P3Column.DefaultCellStyle = dataGridViewCellStyle11;
+            this.P3Column.HeaderText = "P3";
+            this.P3Column.Name = "P3Column";
+            this.P3Column.Width = 45;
+            // 
+            // R3Column
+            // 
+            this.R3Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.R3Column.DataPropertyName = "R3";
+            this.R3Column.DividerWidth = 5;
+            this.R3Column.HeaderText = "R3";
+            this.R3Column.Name = "R3Column";
+            this.R3Column.Width = 32;
+            // 
+            // RQSColumn
+            // 
+            this.RQSColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.RQSColumn.DataPropertyName = "RQD";
+            dataGridViewCellStyle12.Format = "0%";
+            this.RQSColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            this.RQSColumn.HeaderText = "RQD (%)";
+            this.RQSColumn.Name = "RQSColumn";
+            this.RQSColumn.Width = 68;
             // 
             // Form1
             // 
@@ -1146,6 +1149,17 @@
         private System.Windows.Forms.ToolStripMenuItem logoPorDefectoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeEnsayosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem coloresDeAchuradosToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CajaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProfundidadArriba2Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProfundidadAbajo2Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo2Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionColumn;
+        private System.Windows.Forms.DataGridViewImageColumn AchuradoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profundidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.DataGridViewComboBoxColumn TipoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProfundidadArribaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProfundidadAbajoColumn;
@@ -1162,17 +1176,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn P3Column;
         private System.Windows.Forms.DataGridViewCheckBoxColumn R3Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn RQSColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CajaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProfundidadArriba2Column;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProfundidadAbajo2Column;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo2Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionColumn;
-        private System.Windows.Forms.DataGridViewImageColumn AchuradoColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profundidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
     }
 }
 
