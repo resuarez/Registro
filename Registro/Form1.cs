@@ -29,10 +29,10 @@ namespace RegistroPerforacion
 
         public static string AppPath { get; set; }
         public static bool Modified { get; set; }
-        
-        public Registro CurrentRegistro { get; set; }
-        public Configuracion DefaultConfig { get; set; }
-        public string PathDefaultConfig { get; set; }
+
+        public static Registro CurrentRegistro { get; set; }
+        public static Configuracion DefaultConfig { get; set; }
+        public static string PathDefaultConfig { get; set; }
 
         private void AbrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -65,7 +65,7 @@ namespace RegistroPerforacion
 
         private void BorrarFilaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var dataGridView = (DataGridView) contextMenuStrip1.SourceControl;
+            var dataGridView = (DataGridView)contextMenuStrip1.SourceControl;
             if (MessageBox.Show(@"¿Está seguro de borrar?", "", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             Modified = true;
             foreach (DataGridViewRow item in dataGridView.SelectedRows)
@@ -74,7 +74,7 @@ namespace RegistroPerforacion
 
         private void ColoresDeAchuradosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var coloresAchuradoForm1 = new ColoresAchuradoForm {ColoresdeAchurados = DefaultConfig.ColoresdeAchurados};
+            var coloresAchuradoForm1 = new ColoresAchuradoForm { ColoresdeAchurados = DefaultConfig.ColoresdeAchurados };
             if (coloresAchuradoForm1.ShowDialog() != DialogResult.OK) return;
             DefaultConfig.ColoresdeAchurados = coloresAchuradoForm1.ColoresdeAchurados;
             SaveConfiguration();
@@ -83,7 +83,7 @@ namespace RegistroPerforacion
         private void Control_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
-                SelectNextControl((Control) sender, true, true, true, true);
+                SelectNextControl((Control)sender, true, true, true, true);
         }
 
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -94,117 +94,117 @@ namespace RegistroPerforacion
             switch (column.Name)
             {
                 case "TipoColumn":
-                {
-                    var prof1 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadArribaColumn"];
-                    if (prof1.Value == null)
                     {
-                        double prof0 = 0;
-                        if (e.RowIndex > 0)
-                            prof0 = (double) (dataGridView1.Rows[e.RowIndex - 1].Cells["ProfundidadAbajoColumn"]
-                                                  .Value ??
-                                              0D) + 1D;
-                        prof1.Value = prof0;
+                        var prof1 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadArribaColumn"];
+                        if (prof1.Value == null)
+                        {
+                            double prof0 = 0;
+                            if (e.RowIndex > 0)
+                                prof0 = (double)(dataGridView1.Rows[e.RowIndex - 1].Cells["ProfundidadAbajoColumn"]
+                                                      .Value ??
+                                                  0D) + 1D;
+                            prof1.Value = prof0;
+                        }
                     }
-                }
                     break;
                 case "ProfundidadArribaColumn":
-                {
-                    var prof1 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadArribaColumn"];
-                    var prof2 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadAbajoColumn"];
-                    var tipo = dataGridView1.Rows[e.RowIndex].Cells["TipoColumn"].Value.ToString();
-                    prof2.Value = (double) prof1.Value + DefaultConfig.TiposdeEnsayos
-                                      .First(x => x.ShortName.Equals(tipo)).Longitud;
-                }
+                    {
+                        var prof1 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadArribaColumn"];
+                        var prof2 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadAbajoColumn"];
+                        var tipo = dataGridView1.Rows[e.RowIndex].Cells["TipoColumn"].Value.ToString();
+                        prof2.Value = (double)prof1.Value + DefaultConfig.TiposdeEnsayos
+                                          .First(x => x.ShortName.Equals(tipo)).Longitud;
+                    }
                     break;
                 case "ProfundidadAbajoColumn":
-                {
-                    var prof1 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadArribaColumn"];
-                    var prof2 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadAbajoColumn"];
-                    var longitud = dataGridView1.Rows[e.RowIndex].Cells["LongitudPerforadaColumn"];
-                    if (prof1.Value == null || prof2.Value == null) return;
-                    longitud.Value = (double) prof2.Value - (double) prof1.Value;
-                }
+                    {
+                        var prof1 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadArribaColumn"];
+                        var prof2 = dataGridView1.Rows[e.RowIndex].Cells["ProfundidadAbajoColumn"];
+                        var longitud = dataGridView1.Rows[e.RowIndex].Cells["LongitudPerforadaColumn"];
+                        if (prof1.Value == null || prof2.Value == null) return;
+                        longitud.Value = (double)prof2.Value - (double)prof1.Value;
+                    }
                     break;
                 case "LongitudRecobradaColumn":
-                {
-                    var longitudPerforada = (double) dataGridView1.Rows[e.RowIndex].Cells["LongitudPerforadaColumn"]
-                        .Value;
-                    var longitudRecobrada = (double) dataGridView1.Rows[e.RowIndex].Cells["LongitudRecobradaColumn"]
-                        .Value;
-                    var recuperacion = dataGridView1.Rows[e.RowIndex].Cells["RecuperacionColumn"];
-                    recuperacion.Value = longitudRecobrada / longitudPerforada;
-                    break;
-                }
+                    {
+                        var longitudPerforada = (double)dataGridView1.Rows[e.RowIndex].Cells["LongitudPerforadaColumn"]
+                            .Value;
+                        var longitudRecobrada = (double)dataGridView1.Rows[e.RowIndex].Cells["LongitudRecobradaColumn"]
+                            .Value;
+                        var recuperacion = dataGridView1.Rows[e.RowIndex].Cells["RecuperacionColumn"];
+                        recuperacion.Value = longitudRecobrada / longitudPerforada;
+                        break;
+                    }
 
                 case "N1Column":
-                {
-                    var n1 = dataGridView1.Rows[e.RowIndex].Cells["N1Column"];
-                    var p1 = dataGridView1.Rows[e.RowIndex].Cells["P1Column"];
-                    var r1 = dataGridView1.Rows[e.RowIndex].Cells["R1Column"];
-                    if (n1.Value == null || p1.Value != null) return;
-                    p1.Value = 6;
-                    r1.Value = false;
-                }
+                    {
+                        var n1 = dataGridView1.Rows[e.RowIndex].Cells["N1Column"];
+                        var p1 = dataGridView1.Rows[e.RowIndex].Cells["P1Column"];
+                        var r1 = dataGridView1.Rows[e.RowIndex].Cells["R1Column"];
+                        if (n1.Value == null || p1.Value != null) return;
+                        p1.Value = 6;
+                        r1.Value = false;
+                    }
                     break;
                 case "R1Column":
-                {
-                    var n1 = dataGridView1.Rows[e.RowIndex].Cells["N1Column"];
-                    var p1 = dataGridView1.Rows[e.RowIndex].Cells["P1Column"];
-                    var r1 = dataGridView1.Rows[e.RowIndex].Cells["R1Column"];
-                    EnableCell(n1, !(bool) r1.Value);
-                    EnableCell(p1, !(bool) r1.Value);
-                }
+                    {
+                        var n1 = dataGridView1.Rows[e.RowIndex].Cells["N1Column"];
+                        var p1 = dataGridView1.Rows[e.RowIndex].Cells["P1Column"];
+                        var r1 = dataGridView1.Rows[e.RowIndex].Cells["R1Column"];
+                        EnableCell(n1, !(bool)r1.Value);
+                        EnableCell(p1, !(bool)r1.Value);
+                    }
                     break;
                 case "N2Column":
-                {
-                    var n2 = dataGridView1.Rows[e.RowIndex].Cells["N2Column"];
-                    var p2 = dataGridView1.Rows[e.RowIndex].Cells["P2Column"];
-                    var r2 = dataGridView1.Rows[e.RowIndex].Cells["R2Column"];
-                    if (n2.Value == null || p2.Value != null) return;
-                    p2.Value = 6;
-                    r2.Value = false;
-                }
+                    {
+                        var n2 = dataGridView1.Rows[e.RowIndex].Cells["N2Column"];
+                        var p2 = dataGridView1.Rows[e.RowIndex].Cells["P2Column"];
+                        var r2 = dataGridView1.Rows[e.RowIndex].Cells["R2Column"];
+                        if (n2.Value == null || p2.Value != null) return;
+                        p2.Value = 6;
+                        r2.Value = false;
+                    }
                     break;
                 case "R2Column":
-                {
-                    var n2 = dataGridView1.Rows[e.RowIndex].Cells["N2Column"];
-                    var p2 = dataGridView1.Rows[e.RowIndex].Cells["P2Column"];
-                    var r2 = dataGridView1.Rows[e.RowIndex].Cells["R2Column"];
-                    EnableCell(n2, !(bool) r2.Value);
-                    EnableCell(p2, !(bool) r2.Value);
-                }
+                    {
+                        var n2 = dataGridView1.Rows[e.RowIndex].Cells["N2Column"];
+                        var p2 = dataGridView1.Rows[e.RowIndex].Cells["P2Column"];
+                        var r2 = dataGridView1.Rows[e.RowIndex].Cells["R2Column"];
+                        EnableCell(n2, !(bool)r2.Value);
+                        EnableCell(p2, !(bool)r2.Value);
+                    }
                     break;
                 case "N3Column":
-                {
-                    var n3 = dataGridView1.Rows[e.RowIndex].Cells["N3Column"];
-                    var p3 = dataGridView1.Rows[e.RowIndex].Cells["P3Column"];
-                    var r3 = dataGridView1.Rows[e.RowIndex].Cells["R3Column"];
-                    if (n3.Value == null || p3.Value != null) return;
-                    p3.Value = 6;
-                    r3.Value = false;
-                }
+                    {
+                        var n3 = dataGridView1.Rows[e.RowIndex].Cells["N3Column"];
+                        var p3 = dataGridView1.Rows[e.RowIndex].Cells["P3Column"];
+                        var r3 = dataGridView1.Rows[e.RowIndex].Cells["R3Column"];
+                        if (n3.Value == null || p3.Value != null) return;
+                        p3.Value = 6;
+                        r3.Value = false;
+                    }
                     break;
                 case "R3Column":
-                {
-                    var n3 = dataGridView1.Rows[e.RowIndex].Cells["N3Column"];
-                    var p3 = dataGridView1.Rows[e.RowIndex].Cells["P3Column"];
-                    var r3 = dataGridView1.Rows[e.RowIndex].Cells["R3Column"];
-                    EnableCell(n3, !(bool) r3.Value);
-                    EnableCell(p3, !(bool) r3.Value);
-                }
+                    {
+                        var n3 = dataGridView1.Rows[e.RowIndex].Cells["N3Column"];
+                        var p3 = dataGridView1.Rows[e.RowIndex].Cells["P3Column"];
+                        var r3 = dataGridView1.Rows[e.RowIndex].Cells["R3Column"];
+                        EnableCell(n3, !(bool)r3.Value);
+                        EnableCell(p3, !(bool)r3.Value);
+                    }
                     break;
             }
         }
 
         private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var senderGrid = (DataGridView) sender;
+            var senderGrid = (DataGridView)sender;
 
             if (!senderGrid.Columns[e.ColumnIndex].Name.Equals("AchuradoColumn") || e.RowIndex < 0) return;
             var achuradoForm1 = new AchuradoForm
             {
-                AchuradoInitial = (Bitmap) dataGridView2.Rows[e.RowIndex].Cells["AchuradoColumn"].Value,
-                Colores = DefaultConfig.ColoresdeAchurados.Select(x => new {x.Name, x.HexCode})
+                AchuradoInitial = (Bitmap)dataGridView2.Rows[e.RowIndex].Cells["AchuradoColumn"].Value,
+                Colores = DefaultConfig.ColoresdeAchurados.Select(x => new { x.Name, x.HexCode })
                     .ToDictionary(x => x.Name, x => x.HexCode)
             };
             if (achuradoForm1.ShowDialog() == DialogResult.OK)
@@ -284,7 +284,7 @@ namespace RegistroPerforacion
 
         private void IndexSondeo_ValueChanged(object sender, EventArgs e)
         {
-            InitializeSondeo((int) IndexSondeo.Value);
+            InitializeSondeo((int)IndexSondeo.Value);
         }
 
         private void InformationChanged(object sender, EventArgs e)
@@ -402,7 +402,7 @@ namespace RegistroPerforacion
             CurrentRegistro = new Registro
             {
                 Logo = DefaultConfig.LogoPorDefecto,
-                Sondeos = new List<Sondeo> {new Sondeo()}
+                Sondeos = new List<Sondeo> { new Sondeo() }
             };
             InitializeRegistro();
         }
@@ -444,7 +444,7 @@ namespace RegistroPerforacion
                 {
                     try
                     {
-                        DefaultConfig = (Configuracion) reader.Deserialize(file);
+                        DefaultConfig = (Configuracion)reader.Deserialize(file);
                     }
                     catch
                     {
@@ -467,7 +467,7 @@ namespace RegistroPerforacion
             var reader = new XmlSerializer(typeof(Registro));
             using (var file = new StreamReader(openFileDialog1.FileName))
             {
-                CurrentRegistro = (Registro) reader.Deserialize(file);
+                CurrentRegistro = (Registro)reader.Deserialize(file);
             }
             InitializeRegistro();
             saveFileDialog1.FileName = openFileDialog1.FileName;
@@ -485,7 +485,8 @@ namespace RegistroPerforacion
             var pd = new PrintDocument();
             pd.PrintPage += PrintPage;
             preview.Document = pd;
-            preview.ShowDialog();            
+            preview.WindowState = FormWindowState.Maximized;
+            preview.ShowDialog();
             pd.Dispose();
         }
 
@@ -495,9 +496,48 @@ namespace RegistroPerforacion
             ev.Graphics.PageUnit = GraphicsUnit.Millimeter;
             var pen1 = new Pen(Color.Black, 1);
             var pen2 = new Pen(Color.Black, 2);
+            var Regular = new Font("Times New Roman", 11, FontStyle.Regular);
+            var Bold = new Font("Times New Roman", 11, FontStyle.Bold);
+            var BrushBlack = new SolidBrush(Color.Black);
+            var center = new StringFormat();
+            center.Alignment = StringAlignment.Center;
+            center.LineAlignment = StringAlignment.Center;
+
+            //
+            ev.Graphics.DrawString("Hello World! 1234567", Regular, BrushBlack, 11, 50);
+            // achurado
+            FillPattern(ev.Graphics, CurrentRegistro.Sondeos[0].Muestras[0].Achurado, 50, 50, 200);
+            // Observacion
+            ev.Graphics.DrawString("OBSERVACIONES:", Bold, BrushBlack, 11, 251);
+            ev.Graphics.DrawString(CurrentRegistro.Sondeos[0].Observaciones, Regular, BrushBlack, new Rectangle(11, 255, 193, 15), center);
+
+
+            // borders
             ev.Graphics.DrawRectangle(pen2, new Rectangle(10, 10, 195, 259));
-            ev.Graphics.DrawString("Hello World! 1234567", new Font("Arial", 11), new SolidBrush(Color.Black), 10, 50);
+            ev.Graphics.DrawLine(pen2, 10, 50, 205, 50);
+            ev.Graphics.DrawLine(pen2, 10, 250, 205, 250);
+
+            // Dispose objects
+            pen1.Dispose();
+            pen2.Dispose();
+            Regular.Dispose();
+            Bold.Dispose();
+            BrushBlack.Dispose();
             ev.HasMorePages = false;
+        }
+
+        public static void FillPattern(Graphics ev, Bitmap image, int x0, int y0, int height)
+        {
+            const double scale = 3.8D;
+            var heightInPixels = (double)height * scale;
+            var times = Math.Ceiling(heightInPixels / image.Height * scale);
+            var newImage = new Bitmap(38, (int)heightInPixels);
+            using (var g = Graphics.FromImage(newImage))
+                for (var x = 0; x < times; x++)
+                {
+                    g.DrawImage(image, 0, image.Height * x);
+                }
+            ev.DrawImage(newImage, x0, y0);
         }
 
         private void PrintToolStripButton_Click(object sender, EventArgs e)
@@ -513,7 +553,7 @@ namespace RegistroPerforacion
             Application.Exit();
         }
 
-        private void SaveConfiguration()
+        private static void SaveConfiguration()
         {
             var writer = new XmlSerializer(typeof(Configuracion));
             using (var file = File.Create(PathDefaultConfig))
@@ -541,7 +581,7 @@ namespace RegistroPerforacion
 
         private void TipoDeEnsayosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var tipoEnsayoForm1 = new TipoEnsayoForm {TiposdeEnsayos = DefaultConfig.TiposdeEnsayos};
+            var tipoEnsayoForm1 = new TipoEnsayoForm { TiposdeEnsayos = DefaultConfig.TiposdeEnsayos };
             if (tipoEnsayoForm1.ShowDialog() != DialogResult.OK) return;
             TipoColumn.Items.Clear();
             // ReSharper disable once CoVariantArrayConversion

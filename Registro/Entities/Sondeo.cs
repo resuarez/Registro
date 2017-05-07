@@ -24,7 +24,7 @@ namespace RegistroPerforacion.Entities
             Ensayos = new List<Ensayo>();
             Muestras = new List<Muestra>();
             Freaticos = new List<Freatico>();
-            Observaciones = "";
+            Observaciones = "B = BOLSA    SH = SHELBY   SS = SPT    NQ = BARRENA";
         }
 
         public int Id { get; set; }

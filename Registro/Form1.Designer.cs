@@ -111,6 +111,8 @@
             this.horaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddGridView3 = new System.Windows.Forms.Button();
             this.panelGeneral = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Observaciones = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.Localizacion = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -148,8 +150,6 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Observaciones = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ensayoBindingSource)).BeginInit();
@@ -366,7 +366,7 @@
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tabControl1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.panelGeneral);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1008, 475);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1008, 500);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Top;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 24);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -387,7 +387,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 177);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1008, 298);
+            this.tabControl1.Size = new System.Drawing.Size(1008, 323);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
@@ -396,7 +396,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1000, 272);
+            this.tabPage1.Size = new System.Drawing.Size(1000, 297);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ensayos";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -413,7 +413,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(994, 266);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(994, 291);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -443,7 +443,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(988, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(988, 255);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             // 
@@ -597,7 +597,7 @@
             // 
             // AddGridView1
             // 
-            this.AddGridView1.Location = new System.Drawing.Point(3, 239);
+            this.AddGridView1.Location = new System.Drawing.Point(3, 264);
             this.AddGridView1.Name = "AddGridView1";
             this.AddGridView1.Size = new System.Drawing.Size(105, 23);
             this.AddGridView1.TabIndex = 0;
@@ -611,7 +611,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1000, 301);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 297);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Perfiles";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -628,7 +628,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 295);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(994, 291);
             this.tableLayoutPanel2.TabIndex = 17;
             // 
             // dataGridView2
@@ -650,7 +650,7 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(988, 259);
+            this.dataGridView2.Size = new System.Drawing.Size(988, 255);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
             this.dataGridView2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.DataGridView2_KeyUp);
@@ -714,7 +714,7 @@
             // 
             // AddGridView2
             // 
-            this.AddGridView2.Location = new System.Drawing.Point(3, 268);
+            this.AddGridView2.Location = new System.Drawing.Point(3, 264);
             this.AddGridView2.Name = "AddGridView2";
             this.AddGridView2.Size = new System.Drawing.Size(105, 23);
             this.AddGridView2.TabIndex = 2;
@@ -728,7 +728,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1000, 301);
+            this.tabPage3.Size = new System.Drawing.Size(1000, 297);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nivel Freático";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -746,7 +746,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(994, 295);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(994, 291);
             this.tableLayoutPanel3.TabIndex = 17;
             // 
             // dataGridView3
@@ -762,7 +762,7 @@
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(988, 259);
+            this.dataGridView3.Size = new System.Drawing.Size(988, 255);
             this.dataGridView3.TabIndex = 0;
             // 
             // diaDataGridViewTextBoxColumn
@@ -784,7 +784,7 @@
             // 
             // AddGridView3
             // 
-            this.AddGridView3.Location = new System.Drawing.Point(3, 268);
+            this.AddGridView3.Location = new System.Drawing.Point(3, 264);
             this.AddGridView3.Name = "AddGridView3";
             this.AddGridView3.Size = new System.Drawing.Size(105, 23);
             this.AddGridView3.TabIndex = 2;
@@ -831,6 +831,23 @@
             this.panelGeneral.Padding = new System.Windows.Forms.Padding(10);
             this.panelGeneral.Size = new System.Drawing.Size(1008, 177);
             this.panelGeneral.TabIndex = 4;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(736, 94);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 13);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "Observaciones:";
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.Location = new System.Drawing.Point(739, 110);
+            this.Observaciones.Multiline = true;
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.Size = new System.Drawing.Size(262, 61);
+            this.Observaciones.TabIndex = 29;
             // 
             // label14
             // 
@@ -1197,23 +1214,6 @@
             this.helpToolStripButton.Name = "helpToolStripButton";
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
-            // 
-            // Observaciones
-            // 
-            this.Observaciones.Location = new System.Drawing.Point(739, 110);
-            this.Observaciones.Multiline = true;
-            this.Observaciones.Name = "Observaciones";
-            this.Observaciones.Size = new System.Drawing.Size(262, 61);
-            this.Observaciones.TabIndex = 29;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(736, 94);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 13);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "Observaciones:";
             // 
             // Form1
             // 
