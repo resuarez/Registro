@@ -14,14 +14,13 @@ namespace RegistroPerforacion.Entities
             Nombre = $"Sondeo N°{Id}";
             FechaInicio = DateTime.Today;
             FechaFinal = DateTime.Today;
-            Profundidad = 10;
+            ProfundidadFinal = 10;
             Equipo = "";
             Operador = "";
-            Inclinacion = "";
-            CotaInicio = "";
+            InclinacionVertical = "";
             CoordenadaEste = "";
             CoordenadaNorte = "";
-            Escala = 75;
+            Escala = 20;
             Ensayos = new List<Ensayo>();
             Muestras = new List<Muestra>();
             Freaticos = new List<Freatico>();
@@ -32,11 +31,11 @@ namespace RegistroPerforacion.Entities
         public string Nombre { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFinal { get; set; }
-        public double? Profundidad { get; set; }
+        public double? ProfundidadFinal { get; set; }
         public string Equipo { get; set; }
+        public string Localizacion { get; set; }
         public string Operador { get; set; }
-        public string Inclinacion { get; set; }
-        public string CotaInicio { get; set; }
+        public string InclinacionVertical { get; set; }
         public string CoordenadaNorte { get; set; }
         public string CoordenadaEste { get; set; }
         public int Escala { get; set; }
