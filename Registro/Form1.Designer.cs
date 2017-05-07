@@ -148,6 +148,8 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.Observaciones = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ensayoBindingSource)).BeginInit();
@@ -328,7 +330,7 @@
             this.logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.logo.BackColor = System.Drawing.Color.White;
             this.logo.InitialImage = ((System.Drawing.Image)(resources.GetObject("logo.InitialImage")));
-            this.logo.Location = new System.Drawing.Point(734, 13);
+            this.logo.Location = new System.Drawing.Point(739, 7);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(262, 82);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -364,7 +366,7 @@
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tabControl1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.panelGeneral);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1008, 500);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1008, 475);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Top;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 24);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -382,10 +384,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 173);
+            this.tabControl1.Location = new System.Drawing.Point(0, 177);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1008, 327);
+            this.tabControl1.Size = new System.Drawing.Size(1008, 298);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
@@ -394,7 +396,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1000, 301);
+            this.tabPage1.Size = new System.Drawing.Size(1000, 272);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ensayos";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -411,7 +413,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(994, 295);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(994, 266);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -441,7 +443,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(988, 259);
+            this.dataGridView1.Size = new System.Drawing.Size(988, 230);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellValueChanged);
             // 
@@ -595,7 +597,7 @@
             // 
             // AddGridView1
             // 
-            this.AddGridView1.Location = new System.Drawing.Point(3, 268);
+            this.AddGridView1.Location = new System.Drawing.Point(3, 239);
             this.AddGridView1.Name = "AddGridView1";
             this.AddGridView1.Size = new System.Drawing.Size(105, 23);
             this.AddGridView1.TabIndex = 0;
@@ -792,6 +794,8 @@
             // 
             // panelGeneral
             // 
+            this.panelGeneral.Controls.Add(this.label15);
+            this.panelGeneral.Controls.Add(this.Observaciones);
             this.panelGeneral.Controls.Add(this.Escala);
             this.panelGeneral.Controls.Add(this.label14);
             this.panelGeneral.Controls.Add(this.Localizacion);
@@ -825,7 +829,7 @@
             this.panelGeneral.Location = new System.Drawing.Point(0, 0);
             this.panelGeneral.Name = "panelGeneral";
             this.panelGeneral.Padding = new System.Windows.Forms.Padding(10);
-            this.panelGeneral.Size = new System.Drawing.Size(1008, 173);
+            this.panelGeneral.Size = new System.Drawing.Size(1008, 177);
             this.panelGeneral.TabIndex = 4;
             // 
             // label14
@@ -1194,6 +1198,23 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // Observaciones
+            // 
+            this.Observaciones.Location = new System.Drawing.Point(739, 110);
+            this.Observaciones.Multiline = true;
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.Size = new System.Drawing.Size(262, 61);
+            this.Observaciones.TabIndex = 29;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(736, 94);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 13);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "Observaciones:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1345,6 +1366,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox CoordenadaEste;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox Observaciones;
     }
 }
 

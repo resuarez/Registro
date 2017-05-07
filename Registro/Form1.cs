@@ -336,6 +336,9 @@ namespace RegistroPerforacion
             //CoordenadaEste
             CoordenadaEste.DataBindings.Clear();
             CoordenadaEste.DataBindings.Add("Text", CurrentRegistro.Sondeos[index], "CoordenadaEste", true);
+            //Observaciones
+            Observaciones.DataBindings.Clear();
+            Observaciones.DataBindings.Add("Text", CurrentRegistro.Sondeos[index], "Observaciones", true);
             //Ensayos
             ensayoBindingSource.DataSource = CurrentRegistro.Sondeos[index].Ensayos;
             //Muestras
