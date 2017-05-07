@@ -161,7 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="RegistroPerforacion_TemporaryKey.pfx" />
-    <None Include="Resources\Logo.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logos\logo.png">
@@ -212,6 +211,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

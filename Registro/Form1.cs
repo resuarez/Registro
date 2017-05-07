@@ -15,18 +15,21 @@ namespace RegistroPerforacion
     {
         public Form1()
         {
+            // Default Paths
+            AppPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "";
+            PathDefaultConfig = Path.Combine(AppPath, "config.xml");
+
+            // Initialize
             Modified = false;
             InitializeComponent();
             //DefaultConfig
-            AppPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "";
-            PathDefaultConfig = Path.Combine(AppPath, "config.xml");
             OpenConfiguration();
             NewRegistro();
         }
 
         public static string AppPath { get; set; }
         public static bool Modified { get; set; }
-
+        
         public Registro CurrentRegistro { get; set; }
         public Configuracion DefaultConfig { get; set; }
         public string PathDefaultConfig { get; set; }
@@ -476,13 +479,13 @@ namespace RegistroPerforacion
             OpenFile();
         }
 
-        private void previewToolStripButton_Click(object sender, EventArgs e)
+        private void PreviewToolStripButton_Click(object sender, EventArgs e)
         {
             var preview = new PrintPreviewDialog();
             var pd = new PrintDocument();
             pd.PrintPage += PrintPage;
             preview.Document = pd;
-            preview.ShowDialog();
+            preview.ShowDialog();            
             pd.Dispose();
         }
 
@@ -493,6 +496,7 @@ namespace RegistroPerforacion
             var pen1 = new Pen(Color.Black, 1);
             var pen2 = new Pen(Color.Black, 2);
             ev.Graphics.DrawRectangle(pen2, new Rectangle(10, 10, 195, 259));
+            ev.Graphics.DrawString("Hello World! 1234567", new Font("Arial", 11), new SolidBrush(Color.Black), 10, 50);
             ev.HasMorePages = false;
         }
 
@@ -504,7 +508,7 @@ namespace RegistroPerforacion
             pd.Dispose();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

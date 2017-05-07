@@ -232,7 +232,7 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "&Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.SalirToolStripMenuItem_Click);
             // 
             // configurationToolStripMenuItem
             // 
@@ -1150,7 +1150,7 @@
             this.previewToolStripButton.Name = "previewToolStripButton";
             this.previewToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.previewToolStripButton.Text = "PreviewToolStripButton";
-            this.previewToolStripButton.Click += new System.EventHandler(this.previewToolStripButton_Click);
+            this.previewToolStripButton.Click += new System.EventHandler(this.PreviewToolStripButton_Click);
             // 
             // toolStripSeparator
             // 
@@ -1271,13 +1271,11 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn produndidadAbajoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource muestraBindingSource;
         private System.Windows.Forms.BindingSource freaticoBindingSource;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem borrarFilaToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewImageColumn Image;
         private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
@@ -1333,7 +1331,6 @@
         private System.Windows.Forms.DataGridViewImageColumn AchuradoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn horaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn profundidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.DataGridViewComboBoxColumn TipoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProfundidadArribaColumn;
