@@ -496,20 +496,22 @@ namespace RegistroPerforacion
             ev.Graphics.PageUnit = GraphicsUnit.Millimeter;
             var pen1 = new Pen(Color.Black, 1);
             var pen2 = new Pen(Color.Black, 2);
-            var Regular = new Font("Times New Roman", 11, FontStyle.Regular);
-            var Bold = new Font("Times New Roman", 11, FontStyle.Bold);
-            var BrushBlack = new SolidBrush(Color.Black);
-            var center = new StringFormat();
-            center.Alignment = StringAlignment.Center;
-            center.LineAlignment = StringAlignment.Center;
+            var regular = new Font("Times New Roman", 11, FontStyle.Regular);
+            var bold = new Font("Times New Roman", 11, FontStyle.Bold);
+            var brushBlack = new SolidBrush(Color.Black);
+            var center = new StringFormat
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
 
             //
-            ev.Graphics.DrawString("Hello World! 1234567", Regular, BrushBlack, 11, 50);
+            ev.Graphics.DrawString("Hello World! 1234567", regular, brushBlack, 11, 50);
             // achurado
             FillPattern(ev.Graphics, CurrentRegistro.Sondeos[0].Muestras[0].Achurado, 50, 50, 200);
             // Observacion
-            ev.Graphics.DrawString("OBSERVACIONES:", Bold, BrushBlack, 11, 251);
-            ev.Graphics.DrawString(CurrentRegistro.Sondeos[0].Observaciones, Regular, BrushBlack, new Rectangle(11, 255, 193, 15), center);
+            ev.Graphics.DrawString("OBSERVACIONES:", bold, brushBlack, 11, 251);
+            ev.Graphics.DrawString(CurrentRegistro.Sondeos[0].Observaciones, regular, brushBlack, new Rectangle(11, 255, 193, 15), center);
 
 
             // borders
@@ -520,16 +522,16 @@ namespace RegistroPerforacion
             // Dispose objects
             pen1.Dispose();
             pen2.Dispose();
-            Regular.Dispose();
-            Bold.Dispose();
-            BrushBlack.Dispose();
+            regular.Dispose();
+            bold.Dispose();
+            brushBlack.Dispose();
             ev.HasMorePages = false;
         }
 
         public static void FillPattern(Graphics ev, Bitmap image, int x0, int y0, int height)
         {
             const double scale = 3.8D;
-            var heightInPixels = (double)height * scale;
+            var heightInPixels = height * scale;
             var times = Math.Ceiling(heightInPixels / image.Height * scale);
             var newImage = new Bitmap(38, (int)heightInPixels);
             using (var g = Graphics.FromImage(newImage))
